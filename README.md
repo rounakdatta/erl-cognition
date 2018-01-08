@@ -1,13 +1,26 @@
+  ```erl-sh
+  >  X = [1 | [2, 3, 4]].
+    [1, 2, 3, 4] % cons operator; used in fixing a header to a list
+
+
+  >  -define(JOHNDOE, 007).
+    % macro definition
+
+
+
+  > <<"helloworld">>. % is a binary string
+    <<"helloworld">> 
+
    Quick example of how message sending-and-receiving is done in erlang
    
    ```erl-sh
    > self().
-     <0.720.0>    %Process ID of the current bash shell
+     <0.720.0>    % Process ID of the current bash shell
    > self() ! {hello, world}, ok.
       ok
    > self() ! {just, fun}, ok.
       ok
-   > flush().     %Prints what you had done in the session
+   > flush().     % Prints what you had done in the session
      Shell got {hello, world}   
      Shell got {just, fun}
      ok
@@ -17,7 +30,7 @@
      ok
    > self() ! {trying, out, exps}, done.
      done
-   > F = fun() -> receive X -> X end end.    %The function which helps in receiving messages one-by-one
+   > F = fun() -> receive X -> X end end.    % The function which helps in receiving messages one-by-one
      #Fun<erl_eval.20.99386804>
    > F().      %Received 1st message
      {new,example}
